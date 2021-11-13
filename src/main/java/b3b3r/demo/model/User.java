@@ -2,6 +2,7 @@ package b3b3r.demo.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.util.Date;
 
 @Entity
 public class User {
@@ -10,12 +11,14 @@ public class User {
     private String name;
     private String dept;
     private Integer salary;
+    private Date time;
 
-    public User(Integer id, String name, String dept, Integer salary) {
+    public User(Integer id, String name, String dept, Integer salary, Date time) {
         this.id = id;
         this.name = name;
         this.dept = dept;
         this.salary = salary;
+        this.time = time;
     }
 
     public User() {
@@ -51,6 +54,14 @@ public class User {
 
     public void setSalary(Integer salary) {
         this.salary = salary;
+    }
+
+    public Date getTime() {
+        return time;
+    }
+
+    public void setTime(Date time) {
+        this.time = time;
     }
 
     @Override

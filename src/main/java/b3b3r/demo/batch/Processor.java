@@ -4,6 +4,7 @@ import b3b3r.demo.model.User;
 import org.springframework.batch.item.ItemProcessor;
 import org.springframework.stereotype.Component;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -22,6 +23,7 @@ public class Processor implements ItemProcessor<User, User> {
         String deptCode = user.getDept();
         String dep = DEPT_NAMES.get(deptCode);
         user.setDept(dep); // transform code into name
+        user.setTime(new Date());//add time
         System.out.println(String.format("Converted from [%s] to [%s]", deptCode, dep));
         return user;
     }
